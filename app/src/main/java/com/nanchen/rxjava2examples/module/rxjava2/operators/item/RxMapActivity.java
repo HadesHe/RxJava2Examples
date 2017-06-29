@@ -41,6 +41,8 @@ public class RxMapActivity extends RxOperatorBaseActivity {
                 e.onNext(3);
             }
         }).map(new Function<Integer, String>() {
+
+
             @Override
             public String apply(@NonNull Integer integer) throws Exception {
                 return "This is result " + integer;
