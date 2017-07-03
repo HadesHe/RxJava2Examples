@@ -13,8 +13,16 @@ import timber.log.Timber;
  */
 
 public class MyApplication extends Application {
-    private MyApplication instance;
-    private RefWatcher refWarcher;
+    private static MyApplication instance;
+    private RefWatcher refWatcher;
+
+    public static MyApplication get(){
+        return instance;
+    }
+
+    public static RefWatcher getRefWatcher(){
+        return MyApplication.get().refWatcher;
+    }
 
     @Override
     public void onCreate() {
@@ -24,7 +32,7 @@ public class MyApplication extends Application {
         }
 
         instance=(MyApplication)getApplicationContext();
-        refWarcher=LeakCanary.install(this);
+        refWatcher=LeakCanary.install(this);
 
         MyVolley.init(this);
 
