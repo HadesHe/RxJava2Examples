@@ -37,18 +37,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void removeWorkerFragments(){
-        Fragment frag=getSupportFragmentManager()
-                .findFragmentByTag(RotationPersist1WorkerFragment.class.getName());
-        if (frag != null) {
-            getSupportFragmentManager().beginTransaction().remove(frag).commit();
-        }
-
-        frag=getSupportFragmentManager().findFragmentByTag(RotationPersist2WorkerFragment
-        .class.getName());
-        if (frag != null) {
-            getSupportFragmentManager().beginTransaction().remove(frag).commit();
-
-        }
+//        Fragment frag=getSupportFragmentManager()
+//                .findFragmentByTag(RotationPersist1WorkerFragment.class.getName());
+//        if (frag != null) {
+//            getSupportFragmentManager().beginTransaction().remove(frag).commit();
+//        }
+//
+//        frag=getSupportFragmentManager().findFragmentByTag(RotationPersist2WorkerFragment
+//        .class.getName());
+//        if (frag != null) {
+//            getSupportFragmentManager().beginTransaction().remove(frag).commit();
+//
+//        }
 
     }
 

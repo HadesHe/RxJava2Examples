@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnDemoSchedulers"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Scheduler Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoBuffer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Buffer Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoDebounce"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Debounce Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoRetrofit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Retrofit Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoDoubleBindingTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="DoubleBindingTextview Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoPolling"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Polling Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoRxbus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Rxbus Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoFormValidationCombinel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="FormValidationCombinel Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoPseudoCache"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PseudoCache Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoTiming"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Timing Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoTimeout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Timeout Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoExponentialBackpff"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ExponentialBackpff Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoRotationPersist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="RotationPersist Demo"
+            />
+
+        <Button
+            android:id="@+id/btnDemoVolley"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Volley Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoPagination"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Pagination Demo"
+            />
+        <Button
+            android:id="@+id/btnDemoNetworkDetrctor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="NetworkDetrctor Demo"
+            />
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
