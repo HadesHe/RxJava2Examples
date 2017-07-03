@@ -59,21 +59,11 @@ public class VolleyDemoFragment extends BaseFragment {
     @BindView(R.id.lstThreadingLog)
     ListView lstThreadlingLog;
 
-    private CompositeDisposable disposable=new CompositeDisposable();
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout=inflater.inflate(R.layout.fragment_volley,container,false);
-        unbinder= ButterKnife.bind(this,layout);
-        return layout;
+    public int layoutResId() {
+        return R.layout.fragment_volley;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        disposable.clear();
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -88,11 +78,6 @@ public class VolleyDemoFragment extends BaseFragment {
 
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 
     @OnClick(R.id.btnVolleyStart)
     void startRequest(){
@@ -171,10 +156,6 @@ public class VolleyDemoFragment extends BaseFragment {
                     });
 
         }
-    }
-
-    private boolean isCurrentlyOnMainThread(){
-        return Looper.myLooper()==Looper.getMainLooper();
     }
 
 

@@ -21,20 +21,17 @@ import butterknife.Unbinder;
 
 public class MainFragment extends BaseFragment {
 
-    private Unbinder unbinder;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout=inflater.inflate(R.layout.fragment_main,container,false);
-        unbinder=ButterKnife.bind(this,layout);
-        return layout;
+    public int layoutResId() {
+        return R.layout.fragment_main;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
+
+
+    @OnClick(R.id.btnDemoSchedulers)
+    void concurrencyWithSchedulers(){
+        clickedOn(new ConcurrencyWithSchedulersDemoFragment());
     }
 
     @OnClick(R.id.btnDemoVolley)
