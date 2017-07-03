@@ -39,6 +39,11 @@ public class MainFragment extends BaseFragment {
         clickedOn(new VolleyDemoFragment());
     }
 
+    @OnClick(R.id.btnDemoBuffer)
+    void bufferDemo(){
+        clickedOn(new BufferDemoFragment());
+    }
+
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();
         getActivity().getSupportFragmentManager()
