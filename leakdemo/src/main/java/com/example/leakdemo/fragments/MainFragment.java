@@ -14,6 +14,7 @@ import com.example.leakdemo.volley.VolleyDemoFragment;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import retrofit2.Retrofit;
 
 /**
  * Created by zhanghehe on 2017/7/3.
@@ -43,10 +44,14 @@ public class MainFragment extends BaseFragment {
     void bufferDemo(){
     }
 
-
     @OnClick(R.id.btnDemoDebounce)
     void debounceDemo(){
         clickedOn(new DebounceSearchEmitterFrament());
+    }
+
+    @OnClick(R.id.btnDemoRetrofit)
+    void retrofitDemo(){
+        clickedOn(new RetrofitFragment());
     }
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();
