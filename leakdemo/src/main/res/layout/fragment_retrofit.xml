@@ -6,7 +6,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:gravity="center"
         android:text="Retrofit Demo"
@@ -14,10 +14,10 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnDemoRetrofit"
+            android:id="@+id/btnDemoContributors"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"

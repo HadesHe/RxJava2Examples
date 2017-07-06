@@ -14,6 +14,7 @@ import com.example.leakdemo.base.BaseFragment;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * __   __    _
@@ -48,7 +49,19 @@ public class RetrofitFragment extends BaseFragment {
         adapter=new ArrayAdapter<String>(getContext(),R.layout.item_log,R.id.item_log,new ArrayList<String>());
         lstThreadingLog.setAdapter(adapter);
 
+    }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        disposable.add()
+    }
+
+    @OnClick(R.id.btnDemoContributors)
+    public void onContributorsClick(){
+        adapter.clear();
 
     }
+
 }
