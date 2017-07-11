@@ -3,6 +3,7 @@ package com.example.leakdemo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -16,15 +17,16 @@ import com.example.leakdemo.retrofit.GithubApi;
 import com.example.leakdemo.retrofit.GithubService;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Observable;
-import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.observers.DisposableObserver;
@@ -135,20 +137,51 @@ public class RetrofitFragment extends BaseFragment {
         disposable.add(
                 mGithubService.contributors(etDemoUsername.getText().toString(),
                         etDemoRepository.getText().toString())
-                .flatMap( contributor -> {
-                    Observable<User> _userObservable =
-                            mGithubService
-                                    .user(contributor.)
-                                    .filter(new Predicate<User>() {
-                                        @Override
-                                        public boolean test(@NonNull User user) throws Exception {
-                                            return !isEmpty(user.name)&&!isEmpty(user.email);
-                                        }
-                                    });
+                .flatMap(new Function<List<Contributor>, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(@NonNull List<Contributor> contributors) throws Exception {
+                        return Observable.fromIterable(contributors);
+                    }
+                }).flatMap(new Function<Contributor, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(@NonNull Contributor contributor) throws Exception {
+                        Observable<User> userObservable=
+                                mGithubService.user(contributor.login)
+                                .filter(new Predicate<User>() {
+                                    @Override
+                                    public boolean test(@NonNull User user) throws Exception {
+                                        return !isEmpty(user.name)&&!isEmpty(user.email);
+                                    }
+                                });
 
-                    return Observable.zip(_userObservable, Observable.just(contributor), Pair::new);
+                        return Observable.zip(userObservable, Observable.just(contributor), new BiFunction<User, Contributor, Object>() {
+                            @Override
+                            public Object apply(@NonNull User user, @NonNull Contributor contributor) throws Exception {
+                                return null;
+                            }
+                        });
+                    }
+                }).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<Pair<User,Contributor>>(){
+
+                    @Override
+                    public void onNext(Pair<User, Contributor> userContributorPair) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
                 })
-        )
+
+        );
     }
 
 }
