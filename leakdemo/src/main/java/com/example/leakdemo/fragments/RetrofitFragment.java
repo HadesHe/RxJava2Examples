@@ -10,11 +10,28 @@ import android.widget.ListView;
 
 import com.example.leakdemo.R;
 import com.example.leakdemo.base.BaseFragment;
+import com.example.leakdemo.bean.Contributor;
+import com.example.leakdemo.bean.User;
+import com.example.leakdemo.retrofit.GithubApi;
+import com.example.leakdemo.retrofit.GithubService;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.ObservableSource;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
+
+import static android.text.TextUtils.isEmpty;
 
 /**
  * __   __    _
@@ -36,6 +53,7 @@ public class RetrofitFragment extends BaseFragment {
     @BindView(R.id.lstThreadingLog)
     ListView lstThreadingLog;
     private ArrayAdapter<String> adapter;
+    private GithubApi mGithubService;
 
     @Override
     public int layoutResId() {
@@ -55,13 +73,82 @@ public class RetrofitFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        disposable.add()
+        String githubToken=getString(R.string.github_oauth_token);
+        mGithubService= GithubService.createGithubService(githubToken);
+
     }
 
     @OnClick(R.id.btnDemoContributors)
     public void onContributorsClick(){
         adapter.clear();
 
+        disposable.add(
+                mGithubService.contributors(etDemoUsername.getText().toString(),
+                        etDemoRepository.getText().toString())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<List<Contributor>>() {
+                    @Override
+                    public void onNext(List<Contributor> contributors) {
+                        for (Contributor contributor : contributors) {
+                            adapter.add(
+                                    String.format(
+                                            "%s has made %d contributions to %s",
+                                            contributor.login,
+                                            contributor.contributions,
+                                            etDemoRepository.getText().toString()
+                                    )
+                            );
+
+                            Timber.d(
+                                    "%d has made %d contributions to %s",
+                                    contributor.login,
+                                    contributor.contributions,
+                                    etDemoRepository.getText().toString()
+
+                            );
+
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Timber.e(e,"woops we got an error while getting the" +
+                                " list of contirbutors");
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Timber.d("Retrofit call 1 completed");
+
+                    }
+                }));
+
+    }
+
+    @OnClick(R.id.btnDemoUserInfo)
+    public void onListContributorsWithFullUserInfoClicked(){
+        adapter.clear();
+        disposable.add(
+                mGithubService.contributors(etDemoUsername.getText().toString(),
+                        etDemoRepository.getText().toString())
+                .flatMap( contributor -> {
+                    Observable<User> _userObservable =
+                            mGithubService
+                                    .user(contributor.)
+                                    .filter(new Predicate<User>() {
+                                        @Override
+                                        public boolean test(@NonNull User user) throws Exception {
+                                            return !isEmpty(user.name)&&!isEmpty(user.email);
+                                        }
+                                    });
+
+                    return Observable.zip(_userObservable, Observable.just(contributor), Pair::new);
+                })
+        )
     }
 
 }
