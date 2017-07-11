@@ -3,6 +3,7 @@ package com.example.leakdemo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -16,12 +17,12 @@ import com.example.leakdemo.retrofit.GithubApi;
 import com.example.leakdemo.retrofit.GithubService;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Observable;
-import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -135,18 +136,11 @@ public class RetrofitFragment extends BaseFragment {
         disposable.add(
                 mGithubService.contributors(etDemoUsername.getText().toString(),
                         etDemoRepository.getText().toString())
-                .flatMap( contributor -> {
-                    Observable<User> _userObservable =
-                            mGithubService
-                                    .user(contributor.)
-                                    .filter(new Predicate<User>() {
-                                        @Override
-                                        public boolean test(@NonNull User user) throws Exception {
-                                            return !isEmpty(user.name)&&!isEmpty(user.email);
-                                        }
-                                    });
-
-                    return Observable.zip(_userObservable, Observable.just(contributor), Pair::new);
+                .flatMap(new Function<List<Contributor>, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(@NonNull List<Contributor> contributors) throws Exception {
+                        return Observable.fromIterable(contributors);
+                    }
                 })
         )
     }
