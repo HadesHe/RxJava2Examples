@@ -49,10 +49,12 @@ public class MainFragment extends BaseFragment {
         clickedOn(new DebounceSearchEmitterFrament());
     }
 
-    @OnClick(R.id.btnDemoRetrofit)
-    void retrofitDemo(){
-        clickedOn(new RetrofitFragment());
+    @OnClick(R.id.btnDemoPolling)
+    void pollingDemo(){
+        clickedOn(new PollingFragment());
     }
+
+
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();
         getActivity().getSupportFragmentManager()

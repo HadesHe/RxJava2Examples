@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Polling"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnSimplePolling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SimplePolling"
+            android:textSize="16dp"
+            />
+
+        <Button
+            android:id="@+id/btnIncreasinglyDelayedPolling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Increasingly Delayed Polling"
+            android:textSize="16dp"
+            />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstThreadingLog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+</LinearLayout>
