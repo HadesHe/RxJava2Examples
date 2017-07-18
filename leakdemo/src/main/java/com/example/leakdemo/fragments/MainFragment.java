@@ -1,20 +1,12 @@
 package com.example.leakdemo.fragments;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.leakdemo.R;
 import com.example.leakdemo.base.BaseFragment;
 import com.example.leakdemo.volley.VolleyDemoFragment;
 
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
-import retrofit2.Retrofit;
 
 /**
  * Created by zhanghehe on 2017/7/3.
@@ -52,6 +44,11 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.btnDemoPolling)
     void pollingDemo(){
         clickedOn(new PollingFragment());
+    }
+
+    @OnClick(R.id.btnDemoExponentialBackoff)
+    void demoExponentialBackoff(){
+        clickedOn(new ExponentialBackOffFragment());
     }
 
 
