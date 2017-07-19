@@ -51,6 +51,11 @@ public class MainFragment extends BaseFragment {
         clickedOn(new ExponentialBackOffFragment());
     }
 
+    @OnClick(R.id.btnDemoFormValidationCombinel)
+    void onFormValidationCombine(){
+        clickedOn(new FormValidationCombineLatesFragment());
+    }
+
 
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();
