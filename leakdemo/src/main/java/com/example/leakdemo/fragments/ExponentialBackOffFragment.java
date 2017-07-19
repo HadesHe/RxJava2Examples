@@ -123,13 +123,13 @@ public class ExponentialBackOffFragment extends BaseFragment {
                 };
 
                 Flowable.range(1,4)
-                        .delay(new Function<Integer, Publisher<? extends Object>>() {
+                        .delay(new Function<Integer, Publisher<Integer>>() {
                             @Override
-                            public Publisher<? extends Object> apply(@NonNull final Integer integer) throws Exception {
+                            public Publisher<Integer> apply(@NonNull final Integer integer) throws Exception {
                                 return MathFlowable.sumInt(Flowable.range(1,integer))
-                                        .flatMap(new Function<Integer, Publisher<?>>() {
+                                        .flatMap(new Function<Integer, Publisher<Integer>>() {
                                             @Override
-                                            public Publisher<?> apply(@NonNull Integer targetSencondDelay) throws Exception {
+                                            public Publisher<Integer> apply(@NonNull Integer targetSencondDelay) throws Exception {
                                                 return Flowable.just(integer).delay(targetSencondDelay,TimeUnit.SECONDS);
                                             }
                                         });
