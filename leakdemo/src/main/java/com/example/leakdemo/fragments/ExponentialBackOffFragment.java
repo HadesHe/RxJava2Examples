@@ -13,14 +13,17 @@ import com.example.leakdemo.base.BaseFragment;
 import com.example.leakdemo.wiring.LogAdapter;
 
 import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscription;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import hu.akarnokd.rxjava2.math.MathFlowable;
 import io.reactivex.Flowable;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.subscribers.DisposableSubscriber;
 import timber.log.Timber;
@@ -82,6 +85,68 @@ public class ExponentialBackOffFragment extends BaseFragment {
                 };
         Flowable.error(new RuntimeException("testing"))
                 .retryWhen(new RetryWithDelay(5,1000))
+                .doOnSubscribe(new Consumer<Subscription>() {
+                    @Override
+                    public void accept(@NonNull Subscription subscription) throws Exception {
+                        log("Attempting the impossible 5 times in intervals of 1s");
+                    }
+                }).subscribe(disposableSubscriber);
+        disposable.add(disposableSubscriber);
+    }
+
+    @OnClick(R.id.btnExBackoffDelay)
+    public void startExecutingWithExponentBackOffDelay(){
+        logs=new ArrayList<>();
+        adapter.clear();
+
+        DisposableSubscriber<Integer> disposableSubscriber=
+                new DisposableSubscriber<Integer>() {
+                    @Override
+                    public void onNext(Integer integer) {
+                        Timber.d("executing Task %d [xx:%2d]",integer,getSecondHand());
+                        log(String.format("executing Task %d [xx:%2d]",integer,getSecondHand()));
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        Timber.d(t,"arrr.Error");
+                        log("Error");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Timber.d("onComplete");
+                        log("Completed");
+
+                    }
+                };
+
+                Flowable.range(1,4)
+                        .delay(new Function<Integer, Publisher<? extends Object>>() {
+                            @Override
+                            public Publisher<? extends Object> apply(@NonNull final Integer integer) throws Exception {
+                                return MathFlowable.sumInt(Flowable.range(1,integer))
+                                        .flatMap(new Function<Integer, Publisher<?>>() {
+                                            @Override
+                                            public Publisher<?> apply(@NonNull Integer targetSencondDelay) throws Exception {
+                                                return Flowable.just(integer).delay(targetSencondDelay,TimeUnit.SECONDS);
+                                            }
+                                        });
+                            }
+                        }).doOnSubscribe(new Consumer<Subscription>() {
+                    @Override
+                    public void accept(@NonNull Subscription subscription) throws Exception {
+                        log(String.format("Execute 4 tasks with delay - time now:[xx:%2d]",getSecondHand()));
+                    }
+                }).subscribe(disposableSubscriber);
+        disposable.add(disposableSubscriber);
+    }
+
+    private int getSecondHand(){
+        long millis=System.currentTimeMillis();
+        return (int) (TimeUnit.MILLISECONDS.toSeconds(millis)
+                        -TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
     }
 
     private void log(String msg){
