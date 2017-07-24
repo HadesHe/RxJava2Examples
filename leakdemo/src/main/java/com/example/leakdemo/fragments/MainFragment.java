@@ -56,6 +56,14 @@ public class MainFragment extends BaseFragment {
         clickedOn(new FormValidationCombineLatesFragment());
     }
 
+    @OnClick(R.id.btnDemoPseudoCache)
+    void onPseudoCache(){
+        clickedOn(new PseidpCacheFragment());
+
+    }
+
+
+
 
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();

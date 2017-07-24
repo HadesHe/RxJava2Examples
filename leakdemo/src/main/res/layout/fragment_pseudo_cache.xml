@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvPseudoCacheInfo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Demo about info"
+            android:textColor="@android:color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/btnPseudoCacheContat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Contat"
+                />
+            <Button
+                android:id="@+id/btnPseudoCacheContatEager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Contat Eager"
+                />
+            <Button
+                android:id="@+id/btnPseudoCacheMerge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Merge"
+                />
+
+            <Button
+                android:id="@+id/btnPseudoCacheMergeSlowDisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Merge with slower disk"
+                />
+            <Button
+                android:id="@+id/btnPseudoCacheMergeOptimized"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Merge with Optimized"
+                />
+            <Button
+                android:id="@+id/btnPseudoCacheMergeOptimizedSlowDisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Merge with optimized slow disk"
+                />
+        </LinearLayout>
+        <ListView
+            android:id="@+id/lstPseudoCacheListSubscription"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            ></ListView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstPseudoCacheDetail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        ></ListView>
+    
+</LinearLayout>

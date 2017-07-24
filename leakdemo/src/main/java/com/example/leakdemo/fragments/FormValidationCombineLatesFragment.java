@@ -16,6 +16,7 @@ import com.jakewharton.rxbinding2.widget.RxTextView;
 import butterknife.BindView;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function3;
 import io.reactivex.subscribers.DisposableSubscriber;
@@ -91,7 +92,8 @@ public class FormValidationCombineLatesFragment extends BaseFragment {
                         Timber.d("completed");
                     }
                 };
-                
+
+
                 Flowable.combineLatest(emailChangeObservable,
                         passwordChangeObservable,
                         numChangeObservable, new Function3<CharSequence, CharSequence, CharSequence, Boolean>() {
