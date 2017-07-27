@@ -62,6 +62,11 @@ public class MainFragment extends BaseFragment {
 
     }
 
+    @OnClick(R.id.btnDemoTiming)
+    void onTiming(){
+        clickedOn(new TimingDemoFragment());
+    }
+
 
 
 
