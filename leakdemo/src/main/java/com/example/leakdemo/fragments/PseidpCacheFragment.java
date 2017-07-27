@@ -161,6 +161,9 @@ public class PseidpCacheFragment extends BaseFragment {
 
    }
 
+    /**
+     * 如果本地数据读取速度过慢会覆盖掉从网络获取的数据内容
+     */
    @OnClick(R.id.btnPseudoCacheMergeSlowDisk)
    public void onPseudoCacheMergeSlowDisk(){
        setPseudoCacheInfo("Merge Slow Disk");
@@ -193,6 +196,9 @@ public class PseidpCacheFragment extends BaseFragment {
 
    }
 
+    /**
+     * once the network observable starts emitting, it ignores all results form the disk observable.
+     */
    @OnClick(R.id.btnPseudoCacheMergeOptimized)
    public void onMergeOptimizedClicked(){
        setPseudoCacheInfo("Merge Optimized");
@@ -202,7 +208,28 @@ public class PseidpCacheFragment extends BaseFragment {
            public ObservableSource<Contributor> apply(@NonNull Observable<Contributor> contributorObservable) throws Exception {
                return Observable.merge(contributorObservable,getCachedDiskData(1).takeUntil(contributorObservable));
            }
-       })
+       }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+       .subscribe(new DisposableObserver<Contributor>() {
+           @Override
+           public void onNext(Contributor contributor) {
+               contributionMap.put(contributor.login,contributor.contributions);
+               adapterDetail.clear();
+               adapterDetail.addAll(mapAsList(contributionMap));
+
+           }
+
+           @Override
+           public void onError(Throwable e) {
+               Timber.e(e,"arr something went wrong");
+
+           }
+
+           @Override
+           public void onComplete() {
+               Timber.d("done loading all data");
+
+           }
+       });
 
    }
 
