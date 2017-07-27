@@ -32,8 +32,10 @@ public class MainFragment extends BaseFragment {
         clickedOn(new VolleyDemoFragment());
     }
 
+    @Deprecated
     @OnClick(R.id.btnDemoBuffer)
     void bufferDemo(){
+//        clickedOn(new BufferFragmen());
     }
 
     @OnClick(R.id.btnDemoDebounce)
@@ -60,6 +62,11 @@ public class MainFragment extends BaseFragment {
     void onPseudoCache(){
         clickedOn(new PseidpCacheFragment());
 
+    }
+
+    @OnClick(R.id.btnDemoRxbus)
+    void onRxbus(){
+        clickedOn(new RxBusFragment());
     }
 
     @OnClick(R.id.btnDemoTiming)
