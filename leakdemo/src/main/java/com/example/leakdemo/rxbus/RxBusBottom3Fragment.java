@@ -48,14 +48,14 @@ public class RxBusBottom3Fragment extends BaseFragment {
 
         ConnectableFlowable<Object> tapEventEmiteter=rxBus.asFlowable().publish();
 
-        disposable.add(tapEventEmiteter.subscribe(new Consumer<Object>() {
-            @Override
-            public void accept(@NonNull Object o) throws Exception {
-                if(o instanceof RxBusFragment.TapEvent){
-                    showTapText();
-                }
-            }
-        }));
-       tapEventEmiteter.publish()
+//        disposable.add(tapEventEmiteter.subscribe(new Consumer<Object>() {
+//            @Override
+//            public void accept(@NonNull Object o) throws Exception {
+//                if(o instanceof RxBusFragment.TapEvent){
+//                    showTapText();
+//                }
+//            }
+//        }));
+//       tapEventEmiteter.publish()
     }
 }
