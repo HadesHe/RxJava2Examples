@@ -74,6 +74,15 @@ public class MainFragment extends BaseFragment {
         clickedOn(new TimingDemoFragment());
     }
 
+    @OnClick(R.id.btnDemoRotationPersist)
+    void onRotationPersistClick(){
+        // TODO: 2017/7/30 switch different Rotation
+        clickedOn(new RotationPersist3Fragment());
+//        clickedOn(new RotationPersist2Fragment());
+//        clickedOn(new RotationPersist1Fragment());
+    }
+
+
 
 
     @OnClick(R.id.btnDemoTimeout)
