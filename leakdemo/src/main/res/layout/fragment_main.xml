@@ -111,6 +111,13 @@
             android:text="NetworkDetrctor Demo"
             />
 
+        <Button
+            android:id="@+id/btnMulticastPlayGround"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Multicast PlayGround"
+            />
+
 
 
 

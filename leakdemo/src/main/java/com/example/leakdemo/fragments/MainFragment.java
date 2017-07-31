@@ -76,6 +76,31 @@ public class MainFragment extends BaseFragment {
 
 
 
+    @OnClick(R.id.btnDemoTimeout)
+    void onTimingOut(){
+        clickedOn(new TimingOutFragment());
+    }
+
+    // TODO: 2017/7/31 onPagination
+    @OnClick(R.id.btnDemoPagination)
+    void onPagination(){
+
+    }
+
+    // TODO: 2017/7/31 onNetworkDetector
+    @OnClick(R.id.btnDemoNetworkDetrctor)
+    void onNetworkDetector(){
+
+    }
+
+    // TODO: 2017/7/31 onMulticastPlayGround
+    @OnClick(R.id.btnMulticastPlayGround)
+    void onMulticastPlayGround(){
+
+    }
+
+
+
 
     private void clickedOn(Fragment fragment){
         final String tag=fragment.getClass().toString();
