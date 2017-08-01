@@ -118,6 +118,146 @@
             android:text="Multicast PlayGround"
             />
 
+        <Button
+            android:id="@+id/btnDisposableExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disposable Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnFlowableExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flowable Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnSingelObserverExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SingleObserver Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnCompletableObserverExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CompletableObserver Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnMapExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Map Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnZipExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zip Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnBufferExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buffer Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnTakeExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnReduceExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reduce Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnFilterExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filter Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnSkipExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnReplayExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Replay Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnConcatExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concat Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnMergeExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Merge Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnDifferExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Differ Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnIntervalExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Interval Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnRxbusExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rxbus Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnPaginationExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pagination Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnComposeOperatorExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ComposeOperator Example"
+            android:textAllCaps="false"
+            />
+
+
+
 
 
 
