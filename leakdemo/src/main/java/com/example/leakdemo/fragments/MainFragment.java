@@ -83,9 +83,6 @@ public class MainFragment extends BaseFragment {
 //        clickedOn(new RotationPersist1Fragment());
     }
 
-
-
-
     @OnClick(R.id.btnDemoTimeout)
     void onTimingOut(){
         clickedOn(new TimingOutFragment());
@@ -103,11 +100,9 @@ public class MainFragment extends BaseFragment {
 
     }
 
-    // TODO: 2017/7/31 onMulticastPlayGround
-    @OnClick(R.id.btnMulticastPlayGround)
-    void onMulticastPlayGround(){
-        clickedOn(new MulticastPlaygroundFragment());
-
+    @OnClick(R.id.btnFlowableExample)
+    void onFlowableExampleClick(){
+        clickedOn(new FlowableFragment());
     }
 
 
