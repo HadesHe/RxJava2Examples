@@ -91,15 +91,12 @@ public class MainFragment extends BaseFragment {
         clickedOn(new TimingOutFragment());
     }
 
-    // TODO: 2017/7/31 onPagination
     @OnClick(R.id.btnDemoPagination)
     void onPagination(){
         clickedOn(new PaginationAutoFragment());
-        // TODO: 2017/8/1  clickedOn(new PaginationFragment());
 
     }
 
-    // TODO: 2017/7/31 onNetworkDetector
     @OnClick(R.id.btnDemoNetworkDetrctor)
     void onNetworkDetector(){
         clickedOn(new NetworkDetectorFragment());
@@ -109,6 +106,7 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/7/31 onMulticastPlayGround
     @OnClick(R.id.btnMulticastPlayGround)
     void onMulticastPlayGround(){
+        clickedOn(new MulticastPlaygroundFragment());
 
     }
 
