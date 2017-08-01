@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.example.leakdemo.R;
 import com.example.leakdemo.base.BaseFragment;
+import com.example.leakdemo.pagination.PaginationAutoFragment;
 import com.example.leakdemo.volley.VolleyDemoFragment;
 
 import butterknife.OnClick;
@@ -93,6 +94,8 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/7/31 onPagination
     @OnClick(R.id.btnDemoPagination)
     void onPagination(){
+        clickedOn(new PaginationAutoFragment());
+        // TODO: 2017/8/1  clickedOn(new PaginationFragment());
 
     }
 
