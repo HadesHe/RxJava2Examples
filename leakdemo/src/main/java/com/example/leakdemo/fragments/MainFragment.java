@@ -102,6 +102,7 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/7/31 onNetworkDetector
     @OnClick(R.id.btnDemoNetworkDetrctor)
     void onNetworkDetector(){
+        clickedOn(new NetworkDetectorFragment());
 
     }
 
