@@ -100,6 +100,11 @@ public class MainFragment extends BaseFragment {
 
     }
 
+    @OnClick(R.id.btnDisposableExample)
+    void onDisposableExample(){
+        clickedOn(new DisposableExample());
+    }
+
     @OnClick(R.id.btnFlowableExample)
     void onFlowableExampleClick(){
         clickedOn(new FlowableFragment());
