@@ -111,18 +111,28 @@ public class MainFragment extends BaseFragment {
 
     }
 
+    // TODO: 2017/8/3 ZipExample
+    @OnClick(R.id.btnMapExample)
+    void onZipExampleClick(){
+
+    }
+
     @OnClick(R.id.btnDisposableExample)
     void onDisposableExample(){
         clickedOn(new DisposableExample());
     }
 
-    @OnClick(R.id.btnFlowableExample)
-    void onFlowableExampleClick(){
-        clickedOn(new FlowableFragment());
+    // TODO: 2017/8/3 TakeExample
+    @OnClick(R.id.btnTakeExample)
+    void onTakeExample(){
+
     }
 
-    // TODO: 2017/8/3 ZipExample
-    void onZipExampleClick(){
+    @OnClick(R.id.btnTimerExample)
+    void onTimerExampleClick(){}
+
+    @OnClick(R.id.btnIntervalExample)
+    void onIntervalExampleClick(){
 
     }
 
@@ -131,36 +141,100 @@ public class MainFragment extends BaseFragment {
         clickedOn(new SingleObserverFragment());
     }
 
+
     // TODO: 2017/8/3 completableObserver
     @OnClick(R.id.btnCompletableObserverExample)
     void onCompletableObserverClick(){
         clickedOn(new SingleObserverFragment());
     }
 
-    // TODO: 2017/8/3 BufferExample
-    void onBufferExample(){
-
+    @OnClick(R.id.btnFlowableExample)
+    void onFlowableExampleClick(){
+        clickedOn(new FlowableFragment());
     }
 
-    // TODO: 2017/8/3 TakeExample
-    void onTakeExample(){
-
-    }
-
-    // TODO: 2017/8/3 ReduceExample
+    @OnClick(R.id.btnReduceExample)
     void onReduceExample(){}
 
-    // TODO: 2017/8/3  FilterExample
-    void onFilterExample(){}
+    @OnClick(R.id.btnBufferExample)
+    void onBufferExampleClick(){}
 
-    // TODO: 2017/8/3 SkipExample
-    void onSKipExample(){}
+    @OnClick(R.id.btnFilterExample)
+    void onFilterExampleClick(){}
 
-    // TODO: 2017/8/3 ReplayExample
-    void onReplayExample(){}
+    @OnClick(R.id.btnSkipExample)
+    void onSkipExampleClick(){}
 
-    // TODO: 2017/8/3 ConcatExample
-    void onCancatExample(){}
+    @OnClick(R.id.btnScanExample)
+    void onScanExampleClick(){}
+
+    @OnClick(R.id.btnReplayExample)
+    void onReplayExampleClick(){}
+
+    @OnClick(R.id.btnConcatExample)
+    void onConcatExampleClick(){}
+
+    @OnClick(R.id.btnMergeExample)
+    void onMergeExampleClick(){}
+
+    @OnClick(R.id.btnDeferExample)
+    void onDeferExampleClick(){}
+
+    @OnClick(R.id.btnDistinctExample)
+    void onDistinctExampleClick(){}
+
+    @OnClick(R.id.btnLastOperatorExample)
+    void onLastOperatorClick(){}
+
+    @OnClick(R.id.btnReplaySubjectExample)
+    void onReplaySubjecyClick(){}
+
+    @OnClick(R.id.btnPulishSubjectExample)
+    void onPulishSubjectClick(){}
+
+    @OnClick(R.id.btnBehaviorSubjectExample)
+    void onBehaviorSubjectClick(){}
+
+    @OnClick(R.id.btnAsynSubjectExample)
+    void onAsyncSubjectClick(){}
+
+    @OnClick(R.id.btnThrottleFirstExample)
+    void onThrottleFirstClick(){}
+
+    @OnClick(R.id.btnThrottleLastExample)
+    void onThrottleLastClick(){}
+
+    @OnClick(R.id.btnDebounceExample)
+    void onDebounceClick(){}
+
+    @OnClick(R.id.btnWindowExample)
+    void onWindowClick(){}
+
+    @OnClick(R.id.btnDelayExample)
+    void onDelayClick(){}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

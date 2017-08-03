@@ -239,6 +239,14 @@
             />
 
         <Button
+            android:id="@+id/btnScanExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
             android:id="@+id/btnFilterExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -267,12 +275,99 @@
             android:textAllCaps="false"
             />
         <Button
-            android:id="@+id/btnDifferExample"
+            android:id="@+id/btnDeferExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Differ Example"
+            android:text="Defer Example"
             android:textAllCaps="false"
             />
+        <Button
+            android:id="@+id/btnDistinctExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distinct Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnLastOperatorExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LastOperator Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnReplaySubjectExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ReplaySubject Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnPulishSubjectExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PulishSubject Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnBehaviorSubjectExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BehaviorSubject Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnAsynSubjectExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AsynSubject Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnThrottleFirstExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ThrottleFirst Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnThrottleLastExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ThrottleLast Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnDebounceExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debounce Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnWindowExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Window Example"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnDelayExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delay Example"
+            android:textAllCaps="false"
+            />
+
 
         <Button
             android:id="@+id/btnRxbusExample"
