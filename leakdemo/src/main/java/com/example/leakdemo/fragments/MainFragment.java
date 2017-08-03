@@ -110,6 +110,54 @@ public class MainFragment extends BaseFragment {
         clickedOn(new FlowableFragment());
     }
 
+    @OnClick(R.id.btnSingelObserverExample)
+    void onSingleObserverClick(){
+        clickedOn(new SingleObserverFragment());
+    }
+
+    // TODO: 2017/8/3 completableObserver
+    @OnClick(R.id.btnCompletableObserverExample)
+    void onCompletableObserverClick(){
+        clickedOn(new SingleObserverFragment());
+    }
+
+    // TODO: 2017/8/3 MapExample
+    @OnClick(R.id.btnMapExample)
+    void onMapExampleClick(){
+
+    }
+
+    // TODO: 2017/8/3 ZipExample
+    void onZipExampleClick(){
+
+    }
+
+    // TODO: 2017/8/3 BufferExample
+    void onBufferExample(){
+
+    }
+
+    // TODO: 2017/8/3 TakeExample
+    void onTakeExample(){
+
+    }
+
+    // TODO: 2017/8/3 ReduceExample
+    void onReduceExample(){}
+
+    // TODO: 2017/8/3   FilterExample
+    void onFilterExample(){}
+
+    // TODO: 2017/8/3 SkipExample
+    void onSKipExample(){}
+
+    // TODO: 2017/8/3 ReplayExample
+    void onReplayExample(){}
+
+    // TODO: 2017/8/3 ConcatExample
+    void onCancatExample(){}
+
+
 
 
 

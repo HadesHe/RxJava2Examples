@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.leakdemo.MyApplication;
+import com.example.leakdemo.R;
 import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.ButterKnife;
@@ -36,7 +37,9 @@ abstract class Base2Fragment extends Fragment{
         return layout;
     }
 
-    protected abstract int layoutResId();
+    protected int layoutResId(){
+        return R.layout.fragment_example;
+    };
 
 
     @Override

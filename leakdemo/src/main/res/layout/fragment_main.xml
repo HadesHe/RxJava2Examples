@@ -13,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Scheduler Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -20,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Buffer Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -27,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Debounce Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -34,12 +37,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Retrofit Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoDoubleBindingTextview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="DoubleBindingTextview Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -47,18 +52,21 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Polling Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoRxbus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Rxbus Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoFormValidationCombinel"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="FormValidationCombinel Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -66,30 +74,35 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="PseudoCache Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoTiming"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Timing Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoTimeout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Timeout Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoExponentialBackoff"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="ExponentialBackpff Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoRotationPersist"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="RotationPersist Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -97,18 +110,21 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Volley Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoPagination"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Pagination Demo"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/btnDemoNetworkDetrctor"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="NetworkDetrctor Demo"
+            android:visibility="gone"
             />
 
         <Button
@@ -116,6 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Multicast PlayGround"
+            android:visibility="gone"
             />
 
         <Button
