@@ -100,6 +100,17 @@ public class MainFragment extends BaseFragment {
 
     }
 
+    @OnClick(R.id.btnSimpleExample)
+    void onSimpleExampleClick(){
+        clickedOn(new SimpleExampleFragment());
+    }
+
+    // TODO: 2017/8/3 MapExample
+    @OnClick(R.id.btnMapExample)
+    void onMapExampleClick(){
+
+    }
+
     @OnClick(R.id.btnDisposableExample)
     void onDisposableExample(){
         clickedOn(new DisposableExample());
@@ -108,6 +119,11 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.btnFlowableExample)
     void onFlowableExampleClick(){
         clickedOn(new FlowableFragment());
+    }
+
+    // TODO: 2017/8/3 ZipExample
+    void onZipExampleClick(){
+
     }
 
     @OnClick(R.id.btnSingelObserverExample)
@@ -119,17 +135,6 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.btnCompletableObserverExample)
     void onCompletableObserverClick(){
         clickedOn(new SingleObserverFragment());
-    }
-
-    // TODO: 2017/8/3 MapExample
-    @OnClick(R.id.btnMapExample)
-    void onMapExampleClick(){
-
-    }
-
-    // TODO: 2017/8/3 ZipExample
-    void onZipExampleClick(){
-
     }
 
     // TODO: 2017/8/3 BufferExample
@@ -145,7 +150,7 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/8/3 ReduceExample
     void onReduceExample(){}
 
-    // TODO: 2017/8/3   FilterExample
+    // TODO: 2017/8/3  FilterExample
     void onFilterExample(){}
 
     // TODO: 2017/8/3 SkipExample

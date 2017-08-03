@@ -136,32 +136,10 @@
             />
 
         <Button
-            android:id="@+id/btnDisposableExample"
+            android:id="@+id/btnSimpleExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Disposable Example"
-            android:textAllCaps="false"
-            />
-        <Button
-            android:id="@+id/btnFlowableExample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Flowable Example"
-            android:textAllCaps="false"
-            />
-
-        <Button
-            android:id="@+id/btnSingelObserverExample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SingleObserver Example"
-            android:textAllCaps="false"
-            />
-        <Button
-            android:id="@+id/btnCompletableObserverExample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CompletableObserver Example"
+            android:text="Simple Example"
             android:textAllCaps="false"
             />
 
@@ -181,13 +159,12 @@
             />
 
         <Button
-            android:id="@+id/btnBufferExample"
+            android:id="@+id/btnDisposableExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buffer Example"
+            android:text="Disposable Example"
             android:textAllCaps="false"
             />
-
         <Button
             android:id="@+id/btnTakeExample"
             android:layout_width="match_parent"
@@ -195,6 +172,38 @@
             android:text="Take Example"
             android:textAllCaps="false"
             />
+
+        <Button
+            android:id="@+id/btnTimerExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timer Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnIntervalExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Interval Example"
+            android:textAllCaps="false"
+            />
+
+
+        <Button
+            android:id="@+id/btnSingelObserverExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SingleObserver Example"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnFlowableExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flowable Example"
+            android:textAllCaps="false"
+            />
+
         <Button
             android:id="@+id/btnReduceExample"
             android:layout_width="match_parent"
@@ -202,13 +211,25 @@
             android:text="Reduce Example"
             android:textAllCaps="false"
             />
+
         <Button
-            android:id="@+id/btnFilterExample"
+            android:id="@+id/btnCompletableObserverExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Filter Example"
+            android:text="CompletableObserver Example"
             android:textAllCaps="false"
             />
+
+        <Button
+            android:id="@+id/btnBufferExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buffer Example"
+            android:textAllCaps="false"
+            />
+
+
+
         <Button
             android:id="@+id/btnSkipExample"
             android:layout_width="match_parent"
@@ -216,6 +237,14 @@
             android:text="Skip Example"
             android:textAllCaps="false"
             />
+
+        <Button
+            android:id="@+id/btnFilterExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filter Example"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/btnReplayExample"
             android:layout_width="match_parent"
@@ -244,13 +273,7 @@
             android:text="Differ Example"
             android:textAllCaps="false"
             />
-        <Button
-            android:id="@+id/btnIntervalExample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Interval Example"
-            android:textAllCaps="false"
-            />
+
         <Button
             android:id="@+id/btnRxbusExample"
             android:layout_width="match_parent"
