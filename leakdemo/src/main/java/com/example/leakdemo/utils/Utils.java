@@ -1,5 +1,6 @@
 package com.example.leakdemo.utils;
 
+import com.example.leakdemo.bean.User;
 import com.example.leakdemo.model.ApiUser;
 
 import java.util.ArrayList;
@@ -29,5 +30,19 @@ public class Utils {
         apiUserList.add(apiUserThree);
 
         return apiUserList;
+    }
+
+    public static List<User> convertApiUserListToUserList(List<ApiUser> apiUsers) {
+        List<User> users=new ArrayList<>();
+
+        for (ApiUser apiUser : apiUsers) {
+            User user=new User();
+            user.firstname=apiUser.firstName;
+            user.lastname=apiUser.lastName;
+            users.add(user);
+        }
+
+
+        return users;
     }
 }
