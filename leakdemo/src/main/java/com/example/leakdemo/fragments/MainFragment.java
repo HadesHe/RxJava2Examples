@@ -108,6 +108,7 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/8/3 MapExample
     @OnClick(R.id.btnMapExample)
     void onMapExampleClick(){
+        clickedOn(new MapExampleFragnent());
 
     }
 
