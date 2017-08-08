@@ -105,14 +105,12 @@ public class MainFragment extends BaseFragment {
         clickedOn(new SimpleExampleFragment());
     }
 
-    // TODO: 2017/8/3 MapExample
     @OnClick(R.id.btnMapExample)
     void onMapExampleClick(){
         clickedOn(new MapExampleFragnent());
 
     }
 
-    // TODO: 2017/8/3 ZipExample
     @OnClick(R.id.btnZipExample)
     void onZipExampleClick(){
         clickedOn(new ZipExampleFragment());
@@ -127,11 +125,14 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/8/3 TakeExample
     @OnClick(R.id.btnTakeExample)
     void onTakeExample(){
+        clickedOn(new TakeExampleFragment());
 
     }
 
     @OnClick(R.id.btnTimerExample)
-    void onTimerExampleClick(){}
+    void onTimerExampleClick(){
+        clickedOn(new TimerExampleFragment());
+    }
 
     @OnClick(R.id.btnIntervalExample)
     void onIntervalExampleClick(){

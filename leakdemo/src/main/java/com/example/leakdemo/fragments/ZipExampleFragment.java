@@ -17,7 +17,11 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiFunction;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by zhanghehe on 2017/8/7.
@@ -31,6 +35,17 @@ public class ZipExampleFragment extends Base2Fragment {
 
     @OnClick(R.id.btn)
     public void onClick(){
+
+        Observable.zip(getCricketFansObservable(), getFootballFansObservable()
+                , new BiFunction<List<User>, List<User>, List<User>>() {
+                    @Override
+                    public List<User> apply(@NonNull List<User> users, @NonNull List<User> users2) throws Exception {
+                        return Utils.filterUserWhoLovesBoth(users,users2);
+                    }
+                }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getObserver());
+
     }
 
     private Observable<List<User>> getCricketFansObservable(){
