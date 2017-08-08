@@ -113,8 +113,9 @@ public class MainFragment extends BaseFragment {
     }
 
     // TODO: 2017/8/3 ZipExample
-    @OnClick(R.id.btnMapExample)
+    @OnClick(R.id.btnZipExample)
     void onZipExampleClick(){
+        clickedOn(new ZipExampleFragment());
 
     }
 

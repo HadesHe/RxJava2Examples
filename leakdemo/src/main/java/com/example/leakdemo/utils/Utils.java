@@ -45,4 +45,12 @@ public class Utils {
 
         return users;
     }
+
+    public static List<User> getUserListWhoLovesCricket() {
+        return null;
+    }
+
+    public static List<User> getUserListWhoLovesFootball() {
+        return null;
+    }
 }
