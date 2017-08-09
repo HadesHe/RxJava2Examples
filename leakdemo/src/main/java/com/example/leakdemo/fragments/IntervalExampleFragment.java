@@ -33,9 +33,9 @@ public class IntervalExampleFragment extends Base2Fragment {
     @OnClick(R.id.btn)
     public void onClick(){
         d=getObserver();
-        getObservable().subscribeOn(Schedulers.io())
+        disposables.add(getObservable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(d);
+                .subscribeWith(d));
 
     }
 
@@ -54,7 +54,12 @@ public class IntervalExampleFragment extends Base2Fragment {
                     tv.append("onNext :value" + aLong);
                     tv.append("\n");
                 }else {
-                    d.dispose();
+                    if (!d.isDisposed()) {
+                        tv.append("d isDisposed:"+d.isDisposed());
+
+
+                        d.dispose();
+                    }
                 }
 
             }
