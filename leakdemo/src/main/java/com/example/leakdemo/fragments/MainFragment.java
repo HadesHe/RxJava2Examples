@@ -136,6 +136,7 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.btnIntervalExample)
     void onIntervalExampleClick(){
+        clickedOn(new IntervalExampleFragment());
 
     }
 

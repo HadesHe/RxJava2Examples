@@ -38,7 +38,7 @@ public class TimerExampleFragment extends Base2Fragment {
                 .subscribe(getObserver());
     }
 
-    private Observable<Long> getObservable() {
+    private Observable<? extends Long> getObservable() {
         return Observable.timer(2, TimeUnit.SECONDS);
     }
 
