@@ -149,7 +149,7 @@ public class MainFragment extends BaseFragment {
     // TODO: 2017/8/3 completableObserver
     @OnClick(R.id.btnCompletableObserverExample)
     void onCompletableObserverClick(){
-        clickedOn(new SingleObserverFragment());
+        clickedOn(new CompletableObserverExample());
     }
 
     @OnClick(R.id.btnFlowableExample)
@@ -158,10 +158,14 @@ public class MainFragment extends BaseFragment {
     }
 
     @OnClick(R.id.btnReduceExample)
-    void onReduceExample(){}
+    void onReduceExample(){
+        clickedOn(new ReduceFragment());
+    }
 
     @OnClick(R.id.btnBufferExample)
-    void onBufferExampleClick(){}
+    void onBufferExampleClick(){
+        clickedOn(new BufferExampleFragment());
+    }
 
     @OnClick(R.id.btnFilterExample)
     void onFilterExampleClick(){}
