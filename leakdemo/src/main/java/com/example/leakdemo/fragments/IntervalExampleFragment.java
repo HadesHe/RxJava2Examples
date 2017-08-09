@@ -28,12 +28,14 @@ public class IntervalExampleFragment extends Base2Fragment {
 
     @BindView(R.id.tv)
     TextView tv;
+    private DisposableObserver<Long> d;
 
     @OnClick(R.id.btn)
     public void onClick(){
+        d=getObserver();
         getObservable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(getObserver());
+                .subscribeWith(d);
 
     }
 
@@ -51,6 +53,8 @@ public class IntervalExampleFragment extends Base2Fragment {
                 if(aLong<10) {
                     tv.append("onNext :value" + aLong);
                     tv.append("\n");
+                }else {
+                    d.dispose();
                 }
 
             }
