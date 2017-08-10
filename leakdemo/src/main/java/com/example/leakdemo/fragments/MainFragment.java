@@ -169,14 +169,19 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.btnFilterExample)
     void onFilterExampleClick(){
-        clickedOn(new FilterExampleFragment())_;
+        clickedOn(new FilterExampleFragment());
     }
 
     @OnClick(R.id.btnSkipExample)
-    void onSkipExampleClick(){}
+    void onSkipExampleClick(){
+        clickedOn(new SkipExampleFragment());
+
+    }
 
     @OnClick(R.id.btnScanExample)
-    void onScanExampleClick(){}
+    void onScanExampleClick(){
+        clickedOn(new ScanExampleFragment());
+    }
 
     @OnClick(R.id.btnReplayExample)
     void onReplayExampleClick(){}
