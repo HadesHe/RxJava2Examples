@@ -168,7 +168,9 @@ public class MainFragment extends BaseFragment {
     }
 
     @OnClick(R.id.btnFilterExample)
-    void onFilterExampleClick(){}
+    void onFilterExampleClick(){
+        clickedOn(new FilterExampleFragment())_;
+    }
 
     @OnClick(R.id.btnSkipExample)
     void onSkipExampleClick(){}
