@@ -184,49 +184,84 @@ public class MainFragment extends BaseFragment {
     }
 
     @OnClick(R.id.btnReplayExample)
-    void onReplayExampleClick(){}
+    void onReplayExampleClick(){
+        clickedOn(new ReplayExampleFragment());
+    }
 
     @OnClick(R.id.btnConcatExample)
-    void onConcatExampleClick(){}
+    void onConcatExampleClick(){
+        clickedOn(new ConcatExampleActivity());
+    }
 
     @OnClick(R.id.btnMergeExample)
-    void onMergeExampleClick(){}
+    void onMergeExampleClick(){
+        clickedOn(new MergeExampleFragment());
+    }
 
     @OnClick(R.id.btnDeferExample)
-    void onDeferExampleClick(){}
+    void onDeferExampleClick(){
+        clickedOn(new DeferExampleFragment());
+    }
 
     @OnClick(R.id.btnDistinctExample)
-    void onDistinctExampleClick(){}
+    void onDistinctExampleClick(){
+        clickedOn(new DistinctExampleFragment());
+    }
 
     @OnClick(R.id.btnLastOperatorExample)
-    void onLastOperatorClick(){}
+    void onLastOperatorClick(){
+        clickedOn(new LastOperatiorFragment());
+    }
 
     @OnClick(R.id.btnReplaySubjectExample)
-    void onReplaySubjecyClick(){}
+    void onReplaySubjecyClick(){
+        clickedOn(new ReplaySubjectExample());
+    }
 
     @OnClick(R.id.btnPulishSubjectExample)
-    void onPulishSubjectClick(){}
+    void onPulishSubjectClick(){
+
+        clickedOn(new PulishSubjectFragment());
+    }
+
+
+
 
     @OnClick(R.id.btnBehaviorSubjectExample)
-    void onBehaviorSubjectClick(){}
+    void onBehaviorSubjectClick(){
+        clickedOn(new BeHaviorSubjectExmaple());
+
+    }
 
     @OnClick(R.id.btnAsynSubjectExample)
-    void onAsyncSubjectClick(){}
+    void onAsyncSubjectClick(){
+        clickedOn(new AsyncSubjectExample());
+    }
 
+    //间隔内的第一个
     @OnClick(R.id.btnThrottleFirstExample)
-    void onThrottleFirstClick(){}
+    void onThrottleFirstClick(){
+        clickedOn(new ThrottleFirstExmaple());
+    }
 
+    //间隔内的最后一个
     @OnClick(R.id.btnThrottleLastExample)
-    void onThrottleLastClick(){}
+    void onThrottleLastClick(){
+        clickedOn(new ThrottleLastExmaple());
+    }
 
     @OnClick(R.id.btnDebounceExample)
-    void onDebounceClick(){}
+    void onDebounceClick(){
+        clickedOn(new DebounceFragment());
+    }
 
     @OnClick(R.id.btnWindowExample)
     void onWindowClick(){}
 
     @OnClick(R.id.btnDelayExample)
-    void onDelayClick(){}
+    void onDelayClick(){
+        clickedOn(new DelayExmapke());
+    }
 
 
 
