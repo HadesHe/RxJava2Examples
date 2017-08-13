@@ -391,6 +391,15 @@
             android:textAllCaps="false"
             />
 
+        <Button
+            android:id="@+id/btnNetworkExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Network Example"
+            android:textAllCaps="false"
+            />
+
+
 
 
 

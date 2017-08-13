@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.example.leakdemo.R;
 import com.example.leakdemo.base.BaseFragment;
+import com.example.leakdemo.network.NetworkFragment;
 import com.example.leakdemo.pagination.PaginationAutoFragment;
 import com.example.leakdemo.volley.VolleyDemoFragment;
 
@@ -261,6 +262,11 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.btnDelayExample)
     void onDelayClick(){
         clickedOn(new DelayExmapke());
+    }
+
+    @OnClick(R.id.btnNetworkExample)
+    void onNetworkExample(){
+        clickedOn(new NetworkFragment());
     }
 
 
