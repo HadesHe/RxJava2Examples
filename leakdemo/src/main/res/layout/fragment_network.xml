@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnNetworkMap"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="map"/>
+
+        <Button
+            android:id="@+id/btnNetworkZip"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="zip"
+            />
+        <Button
+            android:id="@+id/btnNetworkFlatMapAndFilter"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="FlatMapAndFilter"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnNetworkTake"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="take"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btnNetworkFlatMap"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="flatMap"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/btnNetworkFlatMapWithZip"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="FlatMapWithZip"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+</ScrollView>
