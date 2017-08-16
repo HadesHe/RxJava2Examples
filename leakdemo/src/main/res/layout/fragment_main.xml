@@ -398,6 +398,13 @@
             android:text="Network Example"
             android:textAllCaps="false"
             />
+        <Button
+            android:id="@+id/btnRxbusFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rxbus Example"
+            android:textAllCaps="false"
+            />
 
 
 

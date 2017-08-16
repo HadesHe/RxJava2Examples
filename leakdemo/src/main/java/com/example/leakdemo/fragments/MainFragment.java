@@ -269,6 +269,11 @@ public class MainFragment extends BaseFragment {
         clickedOn(new NetworkFragment());
     }
 
+    @OnClick(R.id.btnRxbusFragment)
+    void onRxbusFragment(){
+        clickedOn(new RxbusExampleFragment());
+    }
+
 
 
 
