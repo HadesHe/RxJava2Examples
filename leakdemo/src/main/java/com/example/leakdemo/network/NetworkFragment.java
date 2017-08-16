@@ -2,11 +2,13 @@ package com.example.leakdemo.network;
 
 
 import android.util.Log;
+import android.util.Pair;
 
 import com.example.leakdemo.R;
 import com.example.leakdemo.bean.User;
 import com.example.leakdemo.fragments.Base2Fragment;
 import com.example.leakdemo.model.ApiUser;
+import com.example.leakdemo.model.UserDetail;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import java.util.ArrayList;
@@ -198,11 +200,100 @@ public class NetworkFragment extends Base2Fragment {
 
     @OnClick(R.id.btnNetworkFlatMap)
     public void onFlatMapClick(){
+        getUserListObservable()
+                .flatMap(new Function<List<User>, ObservableSource<User>>() {
+                    @Override
+                    public ObservableSource<User> apply(@NonNull List<User> users) throws Exception {
+                        return Observable.fromIterable(users);
+                    }
+                })
+                .flatMap(new Function<User, ObservableSource<UserDetail>>() {
+                    @Override
+                    public ObservableSource<UserDetail> apply(@NonNull User user) throws Exception {
+                        return getUserDetailObservable(user.id);
+                    }
+                })
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<UserDetail>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
+                    }
+
+                    @Override
+                    public void onNext(UserDetail userDetail) {
+                        Log.d("flatmap","onNext"+userDetail.toString());
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d("flatmap","onError"+e.toString());
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.d("flatmap","onComplete");
+                    }
+                });
+
+    }
+
+    private ObservableSource<UserDetail> getUserDetailObservable(long id) {
+        return Rx2AndroidNetworking.get("https://fierce-cove-29863.herokuapp.com/getAnUserDetail/{userId}")
+                .addPathParameter("userId",String.valueOf(id))
+                .build()
+                .getObjectObservable(UserDetail.class);
     }
 
     @OnClick(R.id.btnNetworkFlatMapWithZip)
     public void onFlatMapWithZip(){
+        getUserListObservable()
+                .flatMap(new Function<List<User>, ObservableSource<User>>() {
+                    @Override
+                    public ObservableSource<User> apply(@NonNull List<User> users) throws Exception {
+                        return Observable.fromIterable(users);
+                    }
+                }).flatMap(new Function<User, ObservableSource<Pair<UserDetail,User>>>() {
+
+            @Override
+            public ObservableSource<Pair<UserDetail, User>> apply(@NonNull User user) throws Exception {
+                return Observable.zip(getUserDetailObservable(user.id),
+                        Observable.just(user),
+                        new BiFunction<UserDetail, User, Pair<UserDetail, User>>() {
+                            @Override
+                            public Pair<UserDetail, User> apply(@NonNull UserDetail userDetail, @NonNull User user) throws Exception {
+                                return new Pair<UserDetail, User>(userDetail,user);
+                            }
+                        });
+            }
+        }).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Pair<UserDetail, User>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Pair<UserDetail, User> userDetailUserPair) {
+
+                        Log.d("flatmapwithzip","user"+userDetailUserPair.second);
+                        Log.d("flatmapwithzip","userDetail"+userDetailUserPair.first);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
     }
 
